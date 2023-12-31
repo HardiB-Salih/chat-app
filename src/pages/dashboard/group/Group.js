@@ -1,19 +1,20 @@
 import React from "react";
-import Chats from "./chat/Chats";
 import { Box, Stack, useTheme } from "@mui/material";
-import Conversation from "./conversation/Conversation";
-import Contact from "./contact_shared_starred/Contact";
+import Conversation from "../conversation/Conversation";
+import Contact from "../contact_shared_starred/Contact";
 import { useSelector } from "react-redux";
-import ShareMessages from "./contact_shared_starred/ShareMessages";
-import StarrededMessages from "./contact_shared_starred/StarrededMessages";
+import ShareMessages from "../contact_shared_starred/ShareMessages";
+import StarrededMessages from "../contact_shared_starred/StarrededMessages";
+import GroupChat from "./GroupChat";
 
-const GeneralApp = () => {
+const Group = () => {
   const theme = useTheme();
   const app = useSelector((store) => store.app);
 
   return (
     <Stack direction={"row"} sx={{ width: "100%" }}>
-      <Chats />
+      <GroupChat />
+
       <Box
         sx={{
           height: "100vh",
@@ -47,4 +48,4 @@ const GeneralApp = () => {
   );
 };
 
-export default GeneralApp;
+export default Group;
